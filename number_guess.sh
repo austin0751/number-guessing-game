@@ -29,7 +29,7 @@ fi
 
 function MAKE_A_GUESS() {
     NUMBER_FOUND=0
-    echo "Guess the secret number between 1 and 1000:"  # Moved outside the loop
+    echo "Guess the secret number between 1 and 1000:" 
 
     while [ $NUMBER_FOUND -eq 0 ]; do
         read USER_GUESS
@@ -43,9 +43,9 @@ function MAKE_A_GUESS() {
                 INSERT_RESULT=$($PSQL "INSERT INTO games(name, number_of_guesses) VALUES('$USERNAME', $NUMBER_OF_GUESSES);")
                 echo -e "You guessed it in $NUMBER_OF_GUESSES tries. The secret number was $SECRET_NUMBER. Nice job!"
                 NUMBER_FOUND=1
-            elif [[ $USER_GUESS -gt $SECRET_NUMBER ]]; then  # Removed quotes for numeric comparison
+            elif [[ $USER_GUESS -gt $SECRET_NUMBER ]]; then 
                 echo "It's lower than that, guess again:"
-            elif [[ $USER_GUESS -lt $SECRET_NUMBER ]]; then  # Removed quotes for numeric comparison
+            elif [[ $USER_GUESS -lt $SECRET_NUMBER ]]; then
                 echo "It's higher than that, guess again:"
             fi
         fi

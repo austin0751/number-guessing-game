@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Connect to the PostgreSQL database
 PSQL="psql --username=freecodecamp --dbname=number_guess_game -t --no-align -c"
 
 # Prompt for username

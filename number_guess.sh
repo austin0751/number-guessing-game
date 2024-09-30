@@ -6,11 +6,11 @@ PSQL="psql --username=freecodecamp --dbname=number_guess_game -t --no-align -c"
 echo "Enter your username:"
 read USERNAME
 
-# Generate a random secret number between 1 and 1000
+# Generate secret number between 1 and 1000
 SECRET_NUMBER=$((1 + RANDOM % 1000))
 NUMBER_OF_GUESSES=0
 
-# Check if the user has played before
+# Check if user has played before
 USER_COUNT=$($PSQL "SELECT COUNT(name) FROM games WHERE name='$USERNAME';")
 
 if [[ $USER_COUNT -eq 0 ]]; then
